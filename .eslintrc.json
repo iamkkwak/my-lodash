@@ -1,0 +1,37 @@
+// .eslintrc.js
+{
+  "root": true,
+  "env": {
+    "es6": true,
+    "jest/globals": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "jest",
+    "prettier"
+  ],
+  "extends": [
+    "tui/es6",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error",
+    "prettier/prettier": "error"
+  },
+  "settings": {
+    "jest": {
+      "version": 26
+    }
+  }
+}
