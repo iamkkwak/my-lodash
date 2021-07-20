@@ -1,8 +1,10 @@
 import * as lodash from 'lodash';
 import {forEach} from './forEach';
+import {map} from './map';
 
 const m = {
-  forEach
+  forEach,
+  map
 };
 
 global.m = m;
