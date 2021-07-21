@@ -2,9 +2,9 @@
 
 lodash 라이브러리를 구현해본다.
 
-- [ ] `filter`
+- [x] `filter`
 - [x] `forEach`
-- [ ] `map`
+- [x] `map`
 - [ ] `reduce`
 
 (진행중)
