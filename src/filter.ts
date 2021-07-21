@@ -1,6 +1,6 @@
 import {Collection, DefaultCallback} from './types';
 
-function arrayFilter(array: Array<unknown>, callback: DefaultCallback) {
+function arrayFilter(array: Array<unknown>, callback: DefaultCallback): Array<unknown> {
   const {length} = array;
   const result = [];
   for (let index = 0; index < length; index += 1) {
@@ -11,7 +11,7 @@ function arrayFilter(array: Array<unknown>, callback: DefaultCallback) {
   return result;
 }
 
-function objectFilter(object: Record<PropertyKey, unknown>, callback: DefaultCallback) {
+function objectFilter(object: Record<PropertyKey, unknown>, callback: DefaultCallback): Array<unknown> {
   const keys = Object.keys(object);
   const {length} = keys;
   const result = [];
@@ -50,7 +50,7 @@ function matchWithObject(match: Record<PropertyKey, unknown>): DefaultCallback {
   };
 }
 
-function createCallback(param): DefaultCallback {
+function createCallback(param: Collection): DefaultCallback {
   if (Array.isArray(param)) {
     return matchWithProperty(param);
   }
@@ -62,7 +62,7 @@ function createCallback(param): DefaultCallback {
   return matchWithObject(param);
 }
 
-export function filter(param: Collection, predicate: DefaultCallback | Collection): Collection {
+export function filter(param: Collection, predicate: DefaultCallback | Collection): Array<unknown> {
   if (typeof predicate !== 'function') {
     predicate = createCallback(predicate);
   }
